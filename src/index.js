@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// react redux .....
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+//  react redux ends here ..... 
+//  provider will flow entire data of the redux through the application .
+import rootReducer from './Services/Reducer/index';
+const store = createStore(rootReducer);
+// console.log({store});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ <Provider store={store}>
+ <App />
+ </Provider>,
   document.getElementById('root')
 );
 

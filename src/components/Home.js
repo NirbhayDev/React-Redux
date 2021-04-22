@@ -1,17 +1,20 @@
 import React from 'react';
 import './Style/HomeStyle.css'
-
-const Home = ()=>{
+const a=20;
+const Home = (props)=>{
+   console.log('home',(props.data.cardItems).length);
+   const itemsAdded =((props.data.cardItems).length);
+   console.log(itemsAdded);
+   console.log('Home', {props})
     return (
         <div>
-        <div className="Add_to_cart">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiGh28j-bujrxUN6548q8_MscVbqumGURgCg&usqp=CAU" />
-        </div>
-        <h1> Happy Shree Ram Navami</h1>,
+      <div className='master_wrapper'>
+      
+        <h1>React Redux Shopping Cart</h1>,
         <div className="main_wrapper">
         <div className="cart-wrapper">
         <div className="image-wrapper item">
-           <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9awAaHl7Yu6aZj4yRkRJ4MYi0ws_05UOShw&usqp=CAU" />
+           <img src=" https://img.tatacliq.com/images/i7/437Wx649H/MP000000009108758_437Wx649H_202103181758171.jpeg" />
         </div>
         <div className="text-wrapper item">
         <span>Shree Ram Wall Frame</span>
@@ -23,7 +26,7 @@ const Home = ()=>{
         </div>
         <div className="cart-wrapper">
         <div className="image-wrapper item">
-           <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9awAaHl7Yu6aZj4yRkRJ4MYi0ws_05UOShw&usqp=CAU" />
+           <img src=" https://img.tatacliq.com/images/i7/437Wx649H/MP000000009108758_437Wx649H_202103181758171.jpeg" />
         </div>
         <div className="text-wrapper item">
         <span>Shree Ram Wall Frame</span>
@@ -35,17 +38,27 @@ const Home = ()=>{
         </div>
         <div className="cart-wrapper">
         <div className="image-wrapper item">
-           <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9awAaHl7Yu6aZj4yRkRJ4MYi0ws_05UOShw&usqp=CAU" />
+           <img src=" https://img.tatacliq.com/images/i7/437Wx649H/MP000000009108758_437Wx649H_202103181758171.jpeg" />
         </div>
         <div className="text-wrapper item">
         <span>Shree Ram Wall Frame</span>
         <span>Price: $200</span>
      </div>
      <div className="btn-wrapper item">
-     <button>Add To Cart</button>
+     <button 
+     onClick= {()=>props.addToCartHandler({price: 1000, name: 'Shree Ram'})}
+     >
+     Add To Cart
+     </button>
+     <button 
+     onClick= {()=>props.removeToCartHandler()}
+     >
+     Remove To Cart
+     </button>
   </div>
         </div>
         
+        </div>
         </div>
         </div>
     )
